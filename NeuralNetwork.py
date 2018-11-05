@@ -80,7 +80,7 @@ class NeuralNetwork:
 		delta_W_XL1 = np.dot(-self.alfa*X,(E_W1*self.relu_deriv(A1)).T)
 		delta_B1 = -self.alfa*E_W1*self.relu_deriv(A1)
        
-        ############################## UPDATES ###################################
+        	############################## UPDATES ###################################
 		
 		self.W_L1Y = self.W_L1Y - delta_W_L1Y
 		self.B2 = self.B2 - delta_B2
