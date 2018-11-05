@@ -64,18 +64,3 @@ for i in range(test_examples):
 
 accuracy = round((ok_predictions/test_examples)*100,2)
 print("Accuracy on test data: " + str(accuracy) + "%")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
