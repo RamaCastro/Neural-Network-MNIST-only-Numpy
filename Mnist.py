@@ -4,7 +4,7 @@ import NeuralNetwork as net
 import time
 
 
-def ReadCSV(filename):
+def read_csv(filename):
 	print("\nLoading " + filename + " ...")
 
 	inputs = []
@@ -20,7 +20,7 @@ def ReadCSV(filename):
 
 	return np.asarray(inputs), np.asarray(targets)
 
-inputs,targets = ReadCSV("mnist_train.csv")
+inputs,targets = read_csv("mnist_train.csv")
 
 X_nodes = 784
 L1_nodes = 200
@@ -39,7 +39,7 @@ for e in range(epochs):
 	err = 0
 
 	for i in range(number_examples):
-		error = nn.Train(inputs[i],targets[i])
+		error = nn.train(inputs[i],targets[i])
 		err = err + error
 	err = err/number_examples
 	finish_time = time.time()
@@ -47,8 +47,8 @@ for e in range(epochs):
 	time_to_finish = round(((epochs - e)*diff)/60,2)
 	print("Error: " + str(err) + " | EPOCH: " + str(e) + " | Time to finish: " + str(time_to_finish) + " mins")
 
-#nn.Save("MNIST")
-#print("Weights and biases saved.")
+nn.Save("MNIST")
+print("Weights and biases saved.")
 
 x,y = ReadCSV("mnist_test.csv")
 
@@ -58,7 +58,7 @@ ok_predictions = 0
 
 for i in range(test_examples):
 	expected = np.argmax(y[i])
-	prediction = np.argmax(nn.Query(x[i]))
+	prediction = np.argmax(nn.query(x[i]))
 	if expected==prediction:
 		ok_predictions += 1
 
