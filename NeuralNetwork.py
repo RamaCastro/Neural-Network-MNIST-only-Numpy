@@ -52,8 +52,7 @@ class NeuralNetwork:
 		return Y
 
 
-	def Train(self,xlist,tlist):
-		
+	def Train(self,xlist,tlist):	
 		X = np.array(xlist, ndmin=2).T
 		T = np.array(tlist, ndmin=2).T
 
@@ -96,24 +95,3 @@ class NeuralNetwork:
 		np.savetxt(name+'_W_L1Y.txt', self.W_L1Y, fmt='%f')
 		np.savetxt(name+'_B1.txt', self.B1, fmt='%f')
 		np.savetxt(name+'_B2.txt', self.B2, fmt='%f')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
