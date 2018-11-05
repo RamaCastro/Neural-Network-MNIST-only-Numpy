@@ -47,10 +47,10 @@ for e in range(epochs):
 	time_to_finish = round(((epochs - e)*diff)/60,2)
 	print("Error: " + str(err) + " | EPOCH: " + str(e) + " | Time to finish: " + str(time_to_finish) + " mins")
 
-nn.Save("MNIST")
+nn.save("MNIST")
 print("Weights and biases saved.")
 
-x,y = ReadCSV("mnist_test.csv")
+x,y = read_csv("mnist_test.csv")
 
 test_examples = len(x)
 
