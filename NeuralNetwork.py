@@ -40,7 +40,7 @@ class NeuralNetwork:
 		x[x>0] = 1.0
 		return x
 
-	def Query(self,xlist):
+	def query(self,xlist):
 		X = np.array(xlist, ndmin=2).T
 
 		Z1 = np.dot(self.W_XL1.T,X) + self.B1
@@ -52,7 +52,7 @@ class NeuralNetwork:
 		return Y
 
 
-	def Train(self,xlist,tlist):	
+	def train(self,xlist,tlist):	
 		X = np.array(xlist, ndmin=2).T
 		T = np.array(tlist, ndmin=2).T
 
@@ -90,7 +90,7 @@ class NeuralNetwork:
 
 		return np.sum(np.absolute(E_Y))
 
-	def Save(self,name):
+	def save(self,name):
 		np.savetxt(name+'_W_XL1.txt', self.W_XL1, fmt='%f')
 		np.savetxt(name+'_W_L1Y.txt', self.W_L1Y, fmt='%f')
 		np.savetxt(name+'_B1.txt', self.B1, fmt='%f')
